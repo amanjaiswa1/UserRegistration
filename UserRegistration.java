@@ -83,7 +83,7 @@ public class UserRegistration {
 		validatePhoneNumber(phoneNumber);
 
 		// UseCase5 : Validate password- minimum eight characters.
-		String password = "Tekesh1Singh";
+		String password = "tekeshsingh";
 		validatePassword(password);
 	}
 }
