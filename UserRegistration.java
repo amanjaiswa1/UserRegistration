@@ -8,7 +8,7 @@ public class UserRegistration {
 	static final String lastNamePattern = "^[A-Z][a-z]{2,}";
 	static final String emailPattern = "^[a-z0-9]+[.]?[a-z0-9]*@[a-z0-9]+[.][a-z]+([.]?[a-z])*";
 	static final String phoneNumberPattern = "^[0-9]{1,2}\\s[0-9]{10}";
-	static final String passwordPattern = "^(?=.*[A-Z])[a-zA-z0-9]{8,}";
+	static final String passwordPattern = "^(?=.*[A-Z])(?=.*[0-9])[a-zA-z0-9]{8,}";
 
 	// UseCase1 : Validate first name.
 	public static void validateFirstName(String firstName) {
@@ -54,7 +54,7 @@ public class UserRegistration {
 			System.out.println("Match Not Found.");
 	}
 
-	// UseCase5-6 : Validate password.
+	// UseCase5-7 : Validate password.
 	public static void validatePassword(String password) {
 		Pattern pattern = Pattern.compile(passwordPattern);
 		Matcher matcher = pattern.matcher(password);
@@ -82,9 +82,9 @@ public class UserRegistration {
 		String phoneNumber = "91 1234567890";
 		validatePhoneNumber(phoneNumber);
 
-		// UseCase5-6 : Validate password- at-least one upper case.
+		// UseCase5-7 : Validate password- at-least one numeric character.
 		String password;
-		password = "TekeshSingh";
+		password = "Tekesh1Singh";
 		validatePassword(password);
 	}
 }
