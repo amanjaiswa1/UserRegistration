@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 	static final String firstNamePattern = "^[A-Z][a-z]{2,}";
 	static final String lastNamePattern = "^[A-Z][a-z]{2,}";
-	static final String emailPattern = "^[a-z0-9]+[.]?[a-z0-9]*@[a-z0-9]+[.][a-z]+([.]?[a-z])*";
+	static final String emailPattern = "^[a-z0-9]+([.+_-]?[a-z0-9]+)?@{1}[a-z0-9]+[.]([a-z0-9]+[.])?[a-z]{2,}";
 	static final String phoneNumberPattern = "^[0-9]{1,2}\\s[0-9]{10}";
 	static final String passwordPattern = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&]{1})[A-Za-z0-9@$!%*?&]{8,}";
 
@@ -32,7 +32,7 @@ public class UserRegistration {
 			System.out.println("Match Not Found.");
 	}
 
-	// UseCase3 : Validate email.
+	// UseCase3&9 : Validate email.
 	public static void validateEmail(String email) {
 		Pattern pattern = Pattern.compile(emailPattern);
 		Matcher matcher = pattern.matcher(email);
@@ -86,5 +86,11 @@ public class UserRegistration {
 		String password;
 		password = "Tekesh1Singh@";
 		validatePassword(password);
+
+		// UseCase9 : Validate email for all valid and invalid samples.
+		email = "abc+100@gmail.com"; // given valid sample
+		validateEmail(email);
+		email = "abc@abc@gmail.com"; // given invalid sample
+		validateEmail(email);
 	}
 }
