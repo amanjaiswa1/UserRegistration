@@ -51,7 +51,7 @@ public class UserRegistration {
 		validateLastName(lastName);
 
 		// UseCase3 : Validate email.
-		String email = "tekesh.singhgmail.co.in";
+		String email = "tekesh.singh@gmail.co.in";
 		validateEmail(email);
 	}
 }
